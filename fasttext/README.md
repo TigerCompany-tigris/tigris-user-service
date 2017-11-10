@@ -10,23 +10,15 @@ The quickest way to see the fastText classification tutorial with fastText-docke
 ```
 docker pull hephaex/fasttext
 mkdir -p /tmp/data && mkdir -p /tmp/result
-docker run --rm -v /tmp/data:/data -v /tmp/result:/result -it hephaex/fasttext ./example-train.sh
+./fasttext.sh
 ```
 
-## Using Develop
-The development container is meant to be interactive, so the best way to use it is probably with a mounted volume and bash.
+# model generate
+
 ```
-$ mkdir -p /tmp/data && mkdir -p /tmp/result
-$ docker run --rm -it -v /tmp/data:/data -v /tmp/result:/result fasttext /bin/bash
-# ./fasttext
-usage: fasttext <command> <args>
+docker pull hephaex/fasttext
+mkdir -p /tmp/data && mkdir -p /tmp/result
+./train.sh $[input data] $[model name]
+```
 
-The commands supported by fasttext are:
-
-  supervised       train a supervised classifier
-  test             evaluate a supervised classifier
-  predict          predict most likely label
-  skipgram         train a skipgram model
-  cbow             train a cbow model
-  print-vectors    print vectors given a trained model
-
+usage: train.sh <input data> <model name>
