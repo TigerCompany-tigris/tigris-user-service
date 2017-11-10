@@ -1,7 +1,3 @@
-
-$ docker pull hephaex/komecab
-$ docker run -i -t hephaex/komecab komecab
-
 # MeCab Web server
 
 docker-compose로 사용할 수 있는 mecab 서비스
