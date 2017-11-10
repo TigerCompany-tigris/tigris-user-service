@@ -1,0 +1,7 @@
+api:
+  build: ./server
+  volumes:
+    - "./server:/opt/api"
+  ports:
+    - "5000:5000"
+  restart: always
