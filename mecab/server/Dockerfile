@@ -6,7 +6,7 @@ RUN apt-get update \
   && apt-get install -y python3 python3-pip curl git sudo cron \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
-# RUN apt-get install -y curl build-essential
+
 
 # Mecab
 WORKDIR /opt
@@ -33,7 +33,8 @@ RUN echo "dicdir = /usr/local/lib/mecab/dic/mecab-ko-dic" > /usr/local/etc/mecab
 # Clean up
 COPY . /opt/api
 WORKDIR /opt/api
-RUN pip3 install --upgrade pip
+RUN pip3 instal -U pip setuptools
 RUN pip3 install -r requirements.txt
 
+COPY test.txt .
 CMD ["python3", "server.py"]
