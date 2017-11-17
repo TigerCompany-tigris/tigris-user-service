@@ -4,8 +4,6 @@ docker-compose로 사용할 수 있는 mecab 서비스
 
 * server-komecab
     - MeCab를 이용할 수 있는 RESTful 서버
-    - 세종사전과 새로운 사전 mecab-nia-dic를 선택할 수 있음(TBD)
-
 
 ## 동작/종료 방법
 ```shell-session
