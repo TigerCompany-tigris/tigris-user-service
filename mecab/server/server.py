@@ -25,9 +25,9 @@ def parse_neologd():
         abort(400)
 
     sentence = request.json['sentence']
-    results = mecab_parse(sentence, dic='neologd')
+    results = mecab_parse(sentence, dic='nia-dic')
 
-    return mecab_response(200, messages[0], results, 'neologd')
+    return mecab_response(200, messages[0], results, 'nia-dic')
 
 
 @app.errorhandler(400)
@@ -39,10 +39,10 @@ def mecab_response(status, message, results, dic):
     return jsonify({'status': status, 'message': message, 'results': results, 'dict': dic}), status
 
 
-def mecab_parse(sentence, dic='ko-dic'):
+def mecab_parse(sentence, dic='mecab-ko-dic'):
     dic_dir = "/usr/local/lib/mecab/dic/"
-    if dic == 'neologd':
-        dic_name = 'mecab-ipadic-nia'
+    if dic == 'nia-dic':
+        dic_name = 'mecab-nia-dic'
     else:
         dic_name = dic
 
