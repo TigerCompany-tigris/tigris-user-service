@@ -33,8 +33,8 @@ RUN echo "dicdir = /usr/local/lib/mecab/dic/mecab-ko-dic" > /usr/local/etc/mecab
 # Clean up
 COPY . /opt/api
 WORKDIR /opt/api
-RUN pip3 instal -U pip setuptools
+RUN pip3 install -U pip setuptools
 RUN pip3 install -r requirements.txt
 
-COPY test.txt .
+
 CMD ["python3", "server.py"]
